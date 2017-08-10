@@ -1,5 +1,4 @@
 const path = require('path');
-const FlowtypePlugin = require('flowtype-loader/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
@@ -10,21 +9,19 @@ const config = {
     filename: 'bundle.js',
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loader: 'babel-loader',
-      exclude: '/node_modules/',
-    },
-    {
-      test: /\.jsx?$/,
-      loader: 'flowtype-loader',
-      exclude: '/node_modules/',
-    },
-    {
-      test: /\.jsx?$/,
-      loader: 'eslint-loader',
-      exclude: '/node_modules/',
-    }],
+    loaders: [
+      {
+        enforce: 'pre',
+        test: /\.tsx?$/,
+        loader: 'tslint-loader',
+        exclude: '/node_modules/',
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: '/node_modules/',
+      },
+    ],
   },
   plugins: [
     new FlowtypePlugin(),

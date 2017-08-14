@@ -12,7 +12,7 @@ function createWindow() {
     webPreferences: { webSecurity: false },
   });
 
-  mainWindow.loadURL(`file://${__dirname}/dist/index.html`);
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   mainWindow.on('closed', () => {
     mainWindow = null;

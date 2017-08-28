@@ -1,15 +1,16 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import Column from './components/Column';
 
-class Hello extends React.Component < any, any > {
+class App extends React.Component < any, any > {
   constructor() {
     super();
   }
+
   render() {
-    const x : string = 'string';
-    return <div>{`Hello World ${x}`}</div>;
+    return <Column />;
   }
 }
 
-ReactDOM.render(<Hello />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));

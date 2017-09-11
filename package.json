@@ -27,8 +27,10 @@
   },
   "dependencies": {
     "@slack/client": "^3.12.0",
+    "bufferutil": "^3.0.2",
     "electron": "^1.6.11",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react": "^15.6.1",
+    "react-dom": "^15.5.4",
+    "utf-8-validate": "^3.0.3"
   }
 }

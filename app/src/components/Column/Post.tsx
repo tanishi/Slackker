@@ -14,6 +14,6 @@ export default class Post extends React.Component < any, any > {
   }
 
   render() {
-    return <div>{this.props.text}</div>;
+    return <div style={{ margin: '20px', border: '5px solid' }}>{this.props.text}</div>;
   }
 }

@@ -4,25 +4,23 @@ import * as WebSocket from 'ws';
 
 import Post from './Post';
 
-import { API_TOKEN } from '../../config';
-
 
 interface Props {
+  url: string;
 }
 
 interface State {
-  message: string[];
+  messages: string[];
 }
 
-export default class Column extends React.Component < any, any > {
-  constructor() {
+export default class Column extends React.Component < Props, State > {
+  constructor(props) {
     super();
 
+    this.props = props;
     this.state = { messages: [] };
 
-    const URL = `https://slack.com/api/rtm.connect?token=${API_TOKEN}`;
-
-    Https.get(URL, (res) => {
+    Https.get(this.props.url, (res) => {
       res.on('data', (chunk : Buffer) => {
         const obj = JSON.parse(chunk.toString('utf8'));
         const ws = new WebSocket(obj.url);

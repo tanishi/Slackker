@@ -1,9 +1,17 @@
 import * as React from 'react';
+import * as Https from 'https';
+import * as WebSocket from 'ws';
 
 import Post from './Post';
 
+import { API_TOKEN } from '../../config';
+
 
 interface Props {
+}
+
+interface State {
+  message: string[];
 }
 
 export default class Column extends React.Component < any, any > {
@@ -11,6 +19,8 @@ export default class Column extends React.Component < any, any > {
     super();
 
     this.state = { messages: [] };
+
+    const URL = `https://slack.com/api/rtm.connect?token=${API_TOKEN}`;
 
     Https.get(URL, (res) => {
       res.on('data', (chunk : Buffer) => {
@@ -20,14 +30,22 @@ export default class Column extends React.Component < any, any > {
         ws.on('message', (data) => {
           const json = JSON.parse(data);
           if (json.type === 'message') {
-            this.setState({ messages: this.state.messages.push(text) });
+            this.setState({ messages: ([json.text]).concat(this.state.messages) });
           }
         });
       });
     });
   }
 
+  displayPost() {
+    return this.state.messages.map(message => <Post key={`${message}`} text={message} />);
+  }
+
   render() {
-    return {this.state.messages.map(message => <Post text={message} />)};
+    return (
+      <div>
+        {this.displayPost()}
+      </div>
+    );
   }
 }

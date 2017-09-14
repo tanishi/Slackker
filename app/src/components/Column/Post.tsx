@@ -1,8 +1,4 @@
 import * as React from 'react';
-import * as Https from 'https';
-import * as WebSocket from 'ws';
-
-import { API_TOKEN } from '../../config';
 
 
 interface Props {
@@ -11,10 +7,9 @@ interface Props {
   channelName: string;
 }
 
-const URL = `https://slack.com/api/rtm.connect?token=${API_TOKEN}`;
-
-export default class Post extends React.Component < Props, any > {
+export default class Post extends React.Component < any, any > {
   constructor(props) {
+    super(props);
     this.props = props;
   }
 

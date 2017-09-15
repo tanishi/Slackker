@@ -1,4 +1,5 @@
 const electron = require('electron');
+const electronReload = require('electron-reload');
 
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
@@ -31,4 +32,8 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+electronReload(__dirname, {
+  electron: 'npm start',
 });

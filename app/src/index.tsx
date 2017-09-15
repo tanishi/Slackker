@@ -1,4 +1,6 @@
 import * as React from 'react'; import * as ReactDOM from 'react-dom';
+import { MuiThemeProvider } from 'material-ui/styles/MuiThemeProvider';
+
 
 import Column from './components/Column';
 
@@ -15,10 +17,12 @@ class App extends React.Component < any, any > {
     const KUMOKUMO_URL = `https://slack.com/api/rtm.connect?token=${KUMOKUMO_API_TOKEN}`;
 
     return (
-      <div style={{ display: 'flex' }}>
-        <Column url={URL}/>
-        <Column url={KUMOKUMO_URL}/>
-      </div>
+      <MuiThemeProvider>
+        <div style={{ display: 'flex' }}>
+          <Column url={URL}/>
+          <Column url={KUMOKUMO_URL}/>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

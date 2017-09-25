@@ -2,6 +2,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Https from 'https';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles/';
+import pink from 'material-ui/colors/pink';
+import blue from 'material-ui/colors/blue';
+import red from 'material-ui/colors/red';
 
 import Column from './components/Column';
 
@@ -10,7 +13,15 @@ import Team from './Team';
 import API_TOKENS from './API_TOKENS';
 
 
-const theme = createMuiTheme();
+const theme = createMuiTheme({
+  palette: {
+    primary: pink,
+    secondary: {
+      ...blue,
+    },
+    error: red,
+  },
+});
 
 class App extends React.Component < any, any > {
   teams;
@@ -36,15 +47,9 @@ class App extends React.Component < any, any > {
     });
   }
 
-  columns() {
-    const columns = API_TOKENS.map(API_TOKEN =>
-      <Column key="" url={`https://slack.com/api/rtm.connect?token=${API_TOKEN}`} />);
-    return <div style={{ display: 'flex' }}>{columns}</div>;
-  }
-
   render() {
     const columns = API_TOKENS.map(API_TOKEN =>
-      <Column key="" url={`https://slack.com/api/rtm.connect?token=${API_TOKEN}`} />);
+      <Column key={`${API_TOKEN}`} url={`https://slack.com/api/rtm.connect?token=${API_TOKEN}`} />);
 
     return (
       <MuiThemeProvider theme={theme}>

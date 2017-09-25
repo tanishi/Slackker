@@ -3,7 +3,7 @@ import * as Https from 'https';
 import * as WebSocket from 'ws';
 
 import { httpsGet } from '../../utils';
-import Post from './Post';
+import Post from '../Post';
 
 
 interface Props {

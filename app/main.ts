@@ -1,8 +1,6 @@
-const electron = require('electron');
-const electronReload = require('electron-reload');
+import { app, BrowserWindow } from 'electron';
+import * as electronReload from 'electron-reload';
 
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
 
@@ -37,3 +35,4 @@ app.on('activate', () => {
 electronReload(__dirname, {
   electron: 'npm start',
 });
+

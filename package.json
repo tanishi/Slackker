@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --watch",
-    "electron-build": "tsc --outDir ./app/dist/ ./app/main.ts ",
+    "electron-build": "tsc --outDir ./app/dist/",
     "start": "npm run electron-build && electron ./app/dist/main.js"
   },
   "keywords": [],

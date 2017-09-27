@@ -6,8 +6,7 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 400,
-    height: 380,
+    fullscreen: true,
     webPreferences: { webSecurity: false },
   });
 

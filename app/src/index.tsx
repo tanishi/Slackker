@@ -24,7 +24,7 @@ const theme = createMuiTheme({
 });
 
 class App extends React.Component < any, any > {
-  teams;
+  teams: Team[];
 
   constructor() {
     super();

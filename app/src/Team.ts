@@ -1,6 +1,6 @@
 export default class Team {
-  token;
-  url;
+  token: string;
+  url: string;
   self;
   index;
   constructor(token) {

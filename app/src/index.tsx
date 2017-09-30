@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Https from 'https';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles/';
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import pink from 'material-ui/colors/pink';
 import blue from 'material-ui/colors/blue';
 import red from 'material-ui/colors/red';

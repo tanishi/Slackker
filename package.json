@@ -17,6 +17,8 @@
     "@types/node": "^8.0.25",
     "@types/react": "^16.0.2",
     "@types/react-dom": "^15.5.2",
+    "@types/react-redux": "^5.0.9",
+    "@types/redux": "^3.6.0",
     "electron-reload": "^1.2.1",
     "html-webpack-plugin": "^2.30.1",
     "ts-loader": "^2.3.2",
@@ -34,6 +36,8 @@
     "material-ui": "^1.0.0-beta.10",
     "react": "^15.6.1",
     "react-dom": "^15.5.4",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "ts-jest": "^21.0.1",
     "utf-8-validate": "^3.0.3",
     "ws": "^3.2.0"

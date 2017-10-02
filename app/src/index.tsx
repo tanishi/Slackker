@@ -35,7 +35,6 @@ class App extends React.Component < any, any > {
   }
 
   initialize() {
-    console.log(API_TOKENS);
     this.teams = [];
 
     API_TOKENS.map((API_TOKEN, index) => {

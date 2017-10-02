@@ -38,7 +38,6 @@ class Column extends React.Component < Props, State > {
       ws.on('message', (data) => {
         const json = JSON.parse(data);
         if (json.type === 'message') {
-          console.log(json);
           this.setState({ messages: ([json]).concat(this.state.messages) });
         }
       });
@@ -46,7 +45,6 @@ class Column extends React.Component < Props, State > {
   }
 
   displayColumn() {
-    console.log(this.state.messages);
     return this.state.messages.map(message => (
       <Post
         key={`${message.ts}`}

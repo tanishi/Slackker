@@ -1,6 +1,9 @@
 import * as React from 'react';
 import * as Https from 'https';
 import * as WebSocket from 'ws';
+import { withTheme } from 'material-ui/styles'
+import Paper from 'material-ui/Paper';
+import Grid from 'material-ui/Grid';
 
 import { httpsGet } from '../../utils';
 import Post from '../Post';
@@ -21,7 +24,7 @@ interface State {
   messages: Message[];
 }
 
-export default class Column extends React.Component < Props, State > {
+class Column extends React.Component < Props, State > {
   constructor(props) {
     super();
 
@@ -56,9 +59,13 @@ export default class Column extends React.Component < Props, State > {
 
   render() {
     return (
-      <div>
-        {this.displayColumn()}
-      </div>
+      <Grid container>
+        <Paper>
+          {this.displayColumn()}
+        </Paper>
+      </Grid>
     );
   }
 }
+
+export default withTheme(Column);

@@ -1,5 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import * as Https from 'https';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import pink from 'material-ui/colors/pink';
@@ -52,13 +54,17 @@ class App extends React.Component < any, any > {
       <Column key={`${API_TOKEN}`} url={`https://slack.com/api/rtm.connect?token=${API_TOKEN}`} />);
 
     return (
-      <MuiThemeProvider theme={theme}>
-        <div style={{ display: 'flex' }}>
-          {columns}
-        </div>
-      </MuiThemeProvider>
+      <div style={{ display: 'flex' }}>
+        {columns}
+      </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <Provider>
+    <MuiThemeProvider theme={theme}>
+      <App />
+    </MuiThemeProvider>
+  </Provider>,
+  document.getElementById('app'));

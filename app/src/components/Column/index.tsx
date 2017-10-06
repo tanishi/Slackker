@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Https from 'https';
 import * as WebSocket from 'ws';
-import { withTheme } from 'material-ui/styles'
+import { withTheme } from 'material-ui/styles';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 
@@ -45,7 +45,9 @@ class Column extends React.Component < Props, State > {
   }
 
   displayColumn() {
-    return this.state.messages.map(message => (
+    const { messages } = this.state;
+
+    return messages.map(message => (
       <Post
         key={`${message.ts}`}
         user={message.user}
@@ -57,8 +59,8 @@ class Column extends React.Component < Props, State > {
 
   render() {
     return (
-      <Grid container>
-        <Paper>
+      <Grid>
+        <Paper style={{ width: '300px', margin: '30px', padding: '5px' }}>
           {this.displayColumn()}
         </Paper>
       </Grid>

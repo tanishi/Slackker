@@ -38,7 +38,7 @@ class Post extends React.Component < any, any > {
   render() {
     return (
       <div style={{ margin: '20px' }}>
-        <Card>
+        <Card style={{ padding: '10px' }}>
           {this.props.text}
         </Card>
       </div>

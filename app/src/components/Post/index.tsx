@@ -4,15 +4,22 @@ import Typography from 'material-ui/Typography';
 import { withStyles } from 'material-ui/styles';
 
 
+interface Classes {
+  card: string;
+  title: string;
+}
+
 interface Props {
-  userName: string;
+  classes: Classes;
+  user: string;
   text: string;
-  channelName: string;
+  channel: string;
 }
 
 const styles = theme => ({
   card: {
     minWidth: 275,
+    margin: '5px 10px 0px',
   },
   title: {
     marginBottom: 16,
@@ -21,23 +28,23 @@ const styles = theme => ({
   },
 });
 
-class Post extends React.Component < any, any > {
+class Post extends React.Component < Props, any > {
   constructor(props) {
     super(props);
     this.props = props;
   }
 
   render() {
+    const { classes, user, channel, text } = this.props;
     return (
-      <div style={{ margin: '20px' }}>
-        <Card style={{ padding: '10px' }}>
+      <div>
+        <Card className={classes.card}>
           <CardContent>
-            <Typography>
-              {this.props.channel}
-              {this.props.user}
+            <Typography className={classes.title}>
+              {`${channel} : ${channel}`}
             </Typography>
             <Typography>
-              {this.props.text}
+              {text}
             </Typography>
           </CardContent>
         </Card>

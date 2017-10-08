@@ -59,11 +59,14 @@ class Column extends React.Component < Props, State > {
 
   render() {
     return (
-      <Grid>
-        <Paper style={{ width: '300px', margin: '30px', padding: '5px' }}>
-          {this.displayColumn()}
-        </Paper>
-      </Grid>
+      this.state.messages.length !== 0 ?
+      (
+        <Grid>
+          <Paper style={{ width: '300px', height:'100%' }}>
+            {this.displayColumn()}
+          </Paper>
+        </Grid>
+      ) : <div />
     );
   }
 }

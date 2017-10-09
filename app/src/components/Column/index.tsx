@@ -57,9 +57,13 @@ class Column extends React.Component < Props, State > {
     ));
   }
 
+  hasMessages() {
+    return this.state.messages.length !== 0;
+  }
+
   render() {
     return (
-      this.state.messages.length !== 0 ?
+      this.hasMessages() ?
       (
         <Grid>
           <Paper style={{ width: '300px', height:'100%' }}>

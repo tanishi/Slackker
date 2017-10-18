@@ -66,7 +66,7 @@ class Column extends React.Component < Props, State > {
       this.hasMessages() ?
       (
         <Grid>
-          <Paper style={{ width: '300px', height:'100%' }}>
+          <Paper style={{ margin: '10px 20px', padding: '10px', width: '300px', height:'100%' }}>
             {this.displayColumn()}
           </Paper>
         </Grid>

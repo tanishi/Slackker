@@ -1,10 +1,10 @@
 # Slackker
 
-Slack client like Twitter
+Slack client like TweetDeck
 
 ## Description
 
-Slackker is Slack client like Twitter.
+Slackker is Slack client like TweetDeck.
 This client to stream posts.
 
 ## Requirement

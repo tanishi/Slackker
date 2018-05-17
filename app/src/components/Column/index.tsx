@@ -25,8 +25,8 @@ interface State {
 }
 
 class Column extends React.Component < Props, State > {
-  constructor(props) {
-    super();
+  constructor(props, state) {
+    super(props, state);
 
     this.props = props;
     this.state = { messages: [] };
@@ -75,4 +75,4 @@ class Column extends React.Component < Props, State > {
   }
 }
 
-export default withTheme(Column);
+export default withTheme()(Column);
